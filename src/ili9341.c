@@ -8,11 +8,8 @@
  * 2021-01-24     tfx2001      the first version
  */
 
-#include <math.h>
 #include <rtdevice.h>
 #include <rtthread.h>
-#include <stdlib.h>
-#include <string.h> // For memcpy
 
 #include "ili9341.h"
 
@@ -144,8 +141,8 @@ rt_err_t ili9341_init(const char *dev_name, rt_base_t dc_pin,
     }
 
     /* config LCD dev info */
-    _lcd.lcd_info.height = 320;
-    _lcd.lcd_info.width = 240;
+    _lcd.lcd_info.height = PKG_ILI9341_HEIGHT;
+    _lcd.lcd_info.width = PKG_ILI9341_HEIGHT;
     _lcd.lcd_info.bits_per_pixel = 16;
     _lcd.lcd_info.pixel_format = RTGRAPHIC_PIXEL_FORMAT_RGB565;
     _lcd.lcd_info.framebuffer = RT_NULL;
